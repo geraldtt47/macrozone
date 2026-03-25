@@ -1,24 +1,16 @@
+import HomeHeader from '@/components/HomeHeader';
+import MacroGrid from '@/components/MacroGrid';
+import RecentMeals from '@/components/RecentMeals';
 import { globalStyles } from '@/styles/global';
-import { Link } from 'expo-router';
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, Text } from 'react-native';
 
 export default function HomeScreen() {
   return (
-    <View style={globalStyles.container}>
+    <ScrollView style={globalStyles.container}>
       <Text style={globalStyles.title}>MacroZone</Text>
-      <Text style={styles.date}>Monday, March 16</Text>
-      <Link href='/meals' style={{ fontSize: 18, color: '#007bff' }}>
-        Go to Meals
-      </Link>
-    </View>
+      <HomeHeader />
+      <MacroGrid />
+      <RecentMeals />
+    </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  date: {
-    fontSize: 14,
-    color: '#a0a0b0',
-    marginTop: 4,
-    marginBottom: 30,
-  },
-});
