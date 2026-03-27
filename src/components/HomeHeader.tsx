@@ -1,3 +1,5 @@
+import { colors } from '@/styles/global';
+import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function HomeHeader() {
@@ -10,6 +12,7 @@ export default function HomeHeader() {
   return (
     <View style={styles.header}>
       <Text style={styles.date}>{currentDate}</Text>
+      <Ionicons name='notifications' size={24} color={colors.text} />
     </View>
   );
 }
@@ -23,7 +26,7 @@ const styles = StyleSheet.create({
   },
   date: {
     fontSize: 14,
-    color: '#a0a0b0',
+    color: colors.textSecondary,
     marginTop: 4,
     marginBottom: 30,
   },

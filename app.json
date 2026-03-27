@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "macrozone",
+    "name": "MacroZone",
     "slug": "macrozone",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -40,6 +40,13 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "6ea729d8-cce3-463a-a1f2-2ef8745d36ea"
+      }
+    },
+    "owner": "btraversy"
   }
 }
