@@ -411,8 +411,8 @@ Let's create a header component for the home screen that displays the current da
 
 ```ts
 import { colors } from '@/styles/global';
-import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet, Text, View } from 'react-native';
+import { globalStyles } from '../styles/global';
 
 export default function HomeHeader() {
   const currentDate = new Date().toLocaleDateString('en-US', {
@@ -422,20 +422,13 @@ export default function HomeHeader() {
   });
 
   return (
-    <View style={styles.header}>
+    <View style={globalStyles.header}>
       <Text style={styles.date}>{currentDate}</Text>
-      <Ionicons name='notifications' size={24} color={colors.text} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 30,
-  },
   date: {
     fontSize: 14,
     color: colors.textSecondary,
