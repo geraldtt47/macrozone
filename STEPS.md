@@ -464,6 +464,8 @@ export default function HomeScreen() {
 }
 ```
 
+We also are using the `<ScrollView>` now instead of the `<View>` Component.
+
 ## 19. Meal List Screen
 
 Create a new file at `src/app/meals.tsx` and add the following code:
@@ -509,28 +511,20 @@ To navigate between screens, we can use the `Link` component from `expo-router`.
 ```ts
 import { globalStyles } from '@/styles/global';
 import { Link } from 'expo-router';
-import { StyleSheet, Text, ScrollView } from 'react-native';
+import { Text, ScrollView } from 'react-native';
+import HomeHeader from '../components/HomeHeader';
 
 export default function HomeScreen() {
   return (
     <ScrollView style={globalStyles.container}>
       <Text style={globalStyles.title}>MacroZone</Text>
-      <Text style={styles.date}>Monday, March 16</Text>
+     <HomeHeader />
       <Link href='/meals' style={{ fontSize: 18, color: '#007bff' }}>
         Go to Meals
       </Link>
     </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  date: {
-    fontSize: 14,
-    color: '#a0a0b0',
-    marginTop: 4,
-    marginBottom: 30,
-  },
-});
 ```
 
 Now you can navigate to the meals screen.
@@ -801,26 +795,18 @@ Finally, let's add the `MacroGrid` component to the home screen. Open `src/app/(
 ```ts
 import { globalStyles } from '@/styles/global';
 import { StyleSheet, Text, View } from 'react-native';
+import HomeHeader from '../components/HomeHeader';
 import MacroGrid from '@/components/MacroGrid';
 
 export default function HomeScreen() {
   return (
     <View style={globalStyles.container}>
       <Text style={globalStyles.title}>MacroZone</Text>
-      <Text style={styles.date}>Monday, March 16</Text>
+      <HomeHeader />
       <MacroGrid />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  date: {
-    fontSize: 14,
-    color: '#a0a0b0',
-    marginTop: 4,
-    marginBottom: 30,
-  },
-});
 ```
 
 Now you should see the 2x2 grid of macro cards on the home screen.
