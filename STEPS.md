@@ -75,7 +75,7 @@ The project is a simple macro tracking app called MacroZone that allows users to
 
 ### ✨ User Experience Features
 
-47. [Clear All Meals](#47-clear-all-meals)
+. [Clear All Meals](#-clear-all-meals)
 48. [Haptic Feedback](#48-haptic-feedback)
 49. [Haptic Feedback For Deleting Meals](#49-haptic-feedback-for-deleting-meals)
 50. [Share API](#50-share-api)
@@ -1646,18 +1646,12 @@ export const clearAllMeals = async (): Promise<void> => {
 Now update the all meals screen to include a button that calls this function. Open `src/app/(tabs)/meals.tsx` and update to the following:
 
 ```tsx
-import { useFocusEffect } from 'expo-router';
-import { useCallback, useState } from 'react';
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
 import MealItem from '@/components/MealItem';
 import { clearAllMeals, getMeals, Meal } from '@/storage/meals';
-import { colors, globalStyles } from '@/styles/global';
+import { globalStyles } from '@/styles/global';
+import { useFocusEffect } from 'expo-router';
+import { useCallback, useState } from 'react';
+import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
 
 export default function AllMealsScreen() {
   const [meals, setMeals] = useState<Meal[]>([]);
@@ -1686,7 +1680,7 @@ export default function AllMealsScreen() {
           <Text style={styles.clearButton}>Clear All</Text>
         </TouchableOpacity>
       </View>
-       <View style={{ marginTop: 30 }}>
+      <View style={{ marginTop: 30 }}>
         {meals.length === 0 ? (
           <Text style={globalStyles.empty}>No meals logged yet.</Text>
         ) : (
@@ -1707,6 +1701,13 @@ export default function AllMealsScreen() {
     </ScrollView>
   );
 }
+
+const styles = {
+  clearButton: {
+    color: 'red',
+    fontSize: 16,
+  },
+};
 ```
 
 ## 48. Haptic Feedback
