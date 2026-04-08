@@ -405,14 +405,15 @@ const styles = StyleSheet.create({
 });
 ```
 
+We also are using the `<ScrollView>` now instead of the `<View>` Component.
+
 ## 17. Home Header With Date
 
 Let's create a header component for the home screen that displays the current date. Create a component at `src/components/HomeHeader.tsx` with the following code:
 
 ```ts
-import { colors } from '@/styles/global';
 import { StyleSheet, Text, View } from 'react-native';
-import { globalStyles } from '../styles/global';
+import { colors. globalStyles } from '@/styles/global';
 
 export default function HomeHeader() {
   const currentDate = new Date().toLocaleDateString('en-US', {
@@ -456,8 +457,6 @@ export default function HomeScreen() {
   );
 }
 ```
-
-We also are using the `<ScrollView>` now instead of the `<View>` Component.
 
 ## 19. Meal List Screen
 
