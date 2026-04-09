@@ -2103,4 +2103,30 @@ npx eas build --platform android
 
 This command will start the build process for the specified platform(s). Follow the prompts to configure your build, such as selecting the type of build (development or production) and providing any necessary credentials.
 
-Once the build is complete, you will receive a link to download the production build of your app. You can then distribute this build to users or submit it to the App Store or Google Play Store for distribution.
+Once the build is complete, you will receive a link to download the production build of your app. 
+
+For Android, it will give you a **.aab** file, which is the file type to submit to the app store. If you want to just install on a device, you need a **.apk** file, which you can get by changing a value in your **eas.json** file:
+
+```
+{
+  "build": {
+    "preview": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "production": {
+      "autoIncrement": true
+    }
+  }
+}
+```
+
+Then you would run the following to build:
+
+```
+eas build --platform android --profile preview
+```
+
+Then you can install the apk file on a physical device over a USB.
