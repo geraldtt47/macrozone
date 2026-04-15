@@ -75,13 +75,7 @@ The project is a simple macro tracking app called MacroZone that allows users to
 
 ### ✨ User Experience Features
 
-. [Clear All Meals](#-clear-all-meals)
-48. [Haptic Feedback](#48-haptic-feedback)
-49. [Haptic Feedback For Deleting Meals](#49-haptic-feedback-for-deleting-meals)
-50. [Share API](#50-share-api)
-51. [Clipboard API](#51-clipboard-api)
-52. [Notifications](#52-notifications)
-53. [Reminder Toggler](#53-reminder-toggler)
+. [Clear All Meals](#-clear-all-meals) 48. [Haptic Feedback](#48-haptic-feedback) 49. [Haptic Feedback For Deleting Meals](#49-haptic-feedback-for-deleting-meals) 50. [Share API](#50-share-api) 51. [Clipboard API](#51-clipboard-api) 52. [Notifications](#52-notifications) 53. [Reminder Toggler](#53-reminder-toggler)
 
 ### 🏗️ Building & Deployment
 
@@ -2103,11 +2097,11 @@ npx eas build --platform android
 
 This command will start the build process for the specified platform(s). Follow the prompts to configure your build, such as selecting the type of build (development or production) and providing any necessary credentials.
 
-Once the build is complete, you will receive a link to download the production build of your app. 
+Once the build is complete, you will receive a link to download the production build of your app.
 
 For Android, it will give you a **.aab** file, which is the file type to submit to the app store. If you want to just install on a device, you need a **.apk** file, which you can get by changing a value in your **eas.json** file:
 
-```
+```json
 {
   "build": {
     "preview": {
@@ -2125,7 +2119,7 @@ For Android, it will give you a **.aab** file, which is the file type to submit 
 
 Then you would run the following to build:
 
-```
+```bash
 eas build --platform android --profile preview
 ```
 
