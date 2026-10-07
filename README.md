@@ -51,6 +51,16 @@ npx expo start
 
 Scan the QR code with Expo Go (Android) or the Camera app (iOS) to run on your device.
 
+### Android release on device (debug keystore)
+
+To install the **release** build variant signed with the debug keystore (no upload keystore required):
+
+```bash
+bun run android:release:test
+```
+
+See [docs/mobile-release-signing.md](docs/mobile-release-signing.md) for production signing, AAB/APK builds, and troubleshooting.
+
 ## Course Steps
 
 The full step-by-step guide with all the code for the crash course is available in the [STEPS.md](STEPS.md) file.
